@@ -43,3 +43,5 @@ end
 
 -- ... and there is more!
 --  Check out: https://github.com/echasnovski/mini.nvim
+
+vim.api.nvim_set_keymap('n', '<leader>n', ':lua MiniFiles.open()<CR>', { noremap = true, desc = "Open MiniFiles" })

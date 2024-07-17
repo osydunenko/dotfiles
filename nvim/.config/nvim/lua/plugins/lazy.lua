@@ -162,6 +162,14 @@ require("lazy").setup({
 		"folke/which-key.nvim",
 		event = "VimEnter" -- Sets the loading event to 'VimEnter'
 	},
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.5",
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'jonarrien/telescope-cmdline.nvim',
+		}
+	},
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
 		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
