@@ -18,14 +18,6 @@ require("mini.indentscope").setup()
 
 require("mini.files").setup()
 
--- Module mappings. Use `''` (empty string) to disable one.
--- Toggle comment (like `gcip` - comment inner paragraph) for both
--- - gc   - Normal and Visual modes
--- - gcc  - Toggle comment on current line
--- - gc   - toggle comment on visual selection
--- Define 'comment' textobject (like `dgc` - delete whole comment block)
-require('mini.comment').setup()
-
 -- Simple and easy statusline.
 --  You could remove this setup call if you don't like it,
 --  and try some other statusline plugin
