@@ -203,7 +203,7 @@ require("mason-lspconfig").setup({
 
 require('lspconfig').clangd.setup({
 	name = 'clangd',
-	cmd = {'clangd', '--background-index', '--clang-tidy', '--log=verbose'},
+	cmd = {'clangd', '--background-index', '--clang-tidy', '--log=verbose', '--compile-commands-dir=.'},
 	initialization_options = {
 		fallback_flags = { '-std=c++20' },
 	},
