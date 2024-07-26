@@ -143,7 +143,7 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp"
 --  - settings (table): Override the default settings passed when initializing the server.
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 local servers = {
-	clangd = {},
+	-- clangd = {}, ! NOTE: Somehow does not work on Ubbuntu 24.04. Use standalone binary along with LSP
 	-- gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
@@ -198,5 +198,13 @@ require("mason-lspconfig").setup({
 			server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 			require("lspconfig")[server_name].setup(server)
 		end,
+	},
+})
+
+require('lspconfig').clangd.setup({
+	name = 'clangd',
+	cmd = {'clangd', '--background-index', '--clang-tidy', '--log=verbose'},
+	initialization_options = {
+		fallback_flags = { '-std=c++20' },
 	},
 })
